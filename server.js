@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const routes = require('./routes/routes');
-const mysql = require('mysql');
+const dbconnection = require('./database/db');
 
 
 dotenv.config();
@@ -15,12 +15,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //mysql connection
-const dbconnection = mysql.createConnection({
-    host:process.env.URL_DATABASE_HOST,
-    user:process.env.URL_DATABASE_USER,
-    password:process.env.URL_DATABASE_PASSWORD,
-    database:process.env.URL_DATABASE_NAME
-});
+
 
 dbconnection.connect((err) => {
     if (err) throw err;
