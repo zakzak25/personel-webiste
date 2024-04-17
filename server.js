@@ -24,7 +24,9 @@ const dbconnection = mysql.createConnection({
 
 dbconnection.connect((err) => {
     if (err) throw err;
-    console.log('connection succesfull...')
+    app.listen(process.env.PORT || 4000 , () => {
+        console.log('app is running on port 3000');
+    });
 });
 
 //view engine 
@@ -36,7 +38,5 @@ app.use(express.urlencoded({extended : false}));
 app.use('/' , routes);
 
 
-app.listen(process.env.PORT || 4000 , () => {
-    console.log('app is running on port 3000');
-});
+
 
