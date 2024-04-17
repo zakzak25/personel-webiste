@@ -1,11 +1,33 @@
 * {margin: 0;padding: 0;box-sizing: border-box;
    text-decoration: none;}
-body {background-color: red;}
+
+
 header {
     position:relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1440px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    background-color: gray;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 23px;
+    font-family:Arial;
+}
+
+header nav a {
+    padding:12px 19px;
+    color: white;
+}
+
+header nav a:hover {
+    opacity: .5;
+}
+
+header div.login-div i,a{
+    color: white;
 }

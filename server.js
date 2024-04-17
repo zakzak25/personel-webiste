@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const routes = require('./routes/routes');
+const mysql = require('mysql');
+
 
 dotenv.config();
 
@@ -10,9 +12,26 @@ dotenv.config();
 
 //servers static file
 app.use(express.json());
-app.set(express.static('public'));
+app.use(express.static('public'));
 
+//mysql connection
+const dbconnection = mysql.createConnection({
+    host:process.env.URL_DATABASE_HOST,
+    user:process.env.URL_DATABASE_USER,
+    password:process.env.URL_DATABASE_PASSWORD,
+    database:process.env.URL_DATABASE_NAME
+});
 
+dbconnection.connect((err) => {
+    if (err) throw err;
+    console.log('connection succesfull...')
+}
+);
+
+// dbconnection.query('select * from users' , (err , results) => {
+//     if (err) throw err;
+//     console.log(results)
+// })
 
 //view engine 
 app.set('view engine', 'ejs');
@@ -23,7 +42,7 @@ app.use(express.urlencoded({extended : false}));
 app.use('/' , routes);
 
 
-app.listen(3000 , () => {
+app.listen(process.env.PORT || 4000 , () => {
     console.log('app is running on port 3000');
 });
 
