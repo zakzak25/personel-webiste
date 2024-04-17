@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration page</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration form</h1>
+        <p>create an acount is easy and fast</p>
+        <form action="/newUser" method="POST">
+            <label for="username">Username
+                <input type="text" id="username" placeholder="Enter your name" />
+            </label>
+            <label for="email">
+                <input type="text" id="email" placeholder="Email" />
+            </label>
+            <label for="password">
+                <input type="password" id="password" placeholder="Password" />
+            </label>
+            <input type="submit" value="register">
+        </form>
+    </div>
+</body>
+</html>

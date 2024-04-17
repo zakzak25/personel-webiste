@@ -25,18 +25,12 @@ const dbconnection = mysql.createConnection({
 dbconnection.connect((err) => {
     if (err) throw err;
     console.log('connection succesfull...')
-}
-);
-
-// dbconnection.query('select * from users' , (err , results) => {
-//     if (err) throw err;
-//     console.log(results)
-// })
+});
 
 //view engine 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended : false}));
-
+ 
 
 //main route
 app.use('/' , routes);
