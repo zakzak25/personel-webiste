@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registration page</title>
+    <title><%= title %></title>
 </head>
 <body>
     <div class="container">
         <h1>Registration form</h1>
         <p>create an acount is easy and fast</p>
         <form action="/newUser" method="POST">
-            <label for="username">Username
+            <label for="username">Username :
                 <input type="text" id="username" name="username" placeholder="Enter your name" required/>
+                
             </label>
-            <label for="email">
+            <label for="email">email :
                 <input type="text" id="email" name="email" placeholder="Email" required/>
+                <% if (exist) { %>
+                    <p><%= message %></p>
+                <% } %>
             </label>
-            <label for="password">
+            <label for="password">password :
                 <input type="password" id="password" name="password" placeholder="Password" required/>
             </label>
             <input type="submit" value="register">
