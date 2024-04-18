@@ -13,7 +13,12 @@ routes.get('/' , (req , res) => {
 
 //registration page 
 routes.get('/registration' , (req , res) => {
-    res.render('signup' , {title : 'Sign up page '});
+    res.render('signup' , {title : 'Sign up page',exist: false});
+});
+
+//login page
+routes.get('/login' , (req , res) => {
+    res.render('login' , {title : 'Log in page',condition:false});
 });
 
 
@@ -30,20 +35,43 @@ routes.post('/newUser' , async (req , res)=> {
                         console.log("Err message : " + err.sqlMessage);
                         console.log("sql message : " + err.sql);
                     }else {
-                        res.send('<p>new user is succefully submited..</p>');
+                        return res.render('login' ,{title : 'log in page'});
                     }
                 });
            }else {
-            res.render('signup' , {exist : true, message : 'email already exist, please <a href="/sign in" here.!'});
+            return res.render('signup' , {title : 'sign up page' , exist : true , message : 'this email is already exist'});
            }
         });
     }
     catch(err) {
         console.log('Error:' , err);
-        res.status(500).send('An unexprected error occured.');
+        return res.status(500).send('An unexprected error occured.');
     };
 });
 
-
+//log in authantications
+routes.post('/check' , (req , res) => {
+    try {
+        const {entredemail , enteredPassword} = req.body;
+        dbconnection.query('SELECT email,password FROM users WHERE email=?;', [entredemail] , async (err , result) => {
+           let databaseEmail = result[0].email;
+           let hashedPassword = result[0].password;
+           let match = await bcrypt.compare(enteredPassword , hashedPassword);
+           console.log(match);
+           if (databaseEmail === entredemail && match) {
+            console.log('data correct...')
+            return res.status(401).render('index');
+           }
+           else {
+            console.log('eather email or password not correct');
+            return res.render('login' , {title : 'Log in page', condition: true , message : 'eather email or password not correct'});
+           }
+        });
+    }
+    catch(error) {
+        console.error('Error :', error);
+        return res.status(500).send('an Error occured.');
+    }
+});
 
 module.exports= routes;

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="container">
+        <h1>Log in</h1>
+        <p>loging in is easy and fast</p>
+        <form action="/check" method="POST">
+            <label for="email">email :
+               <input type="email" id="email" name="entredemail" placeholder="Enter your email..." required />
+            </label>
+            <label for="password">Password :
+                <input type="password" id="password" name="enteredPassword" placeholder="Password" required />
+            </label>
+            <button type="submit">Log in</button>
+            <% if (condition) { %>
+                <p><%= message %></p>
+            <% } %>
+        </form>
+    </div>
+</body>
+</html>
