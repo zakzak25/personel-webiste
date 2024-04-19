@@ -3,8 +3,6 @@ const app = express();
 const dotenv = require('dotenv');
 const routes = require('./routes/routes');
 const dbconnection = require('./database/db');
-
-
 dotenv.config();
 
 
