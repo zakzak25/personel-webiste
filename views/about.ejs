@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <section>
+        <nav>
+            <div>
+                <img src="/images/wilder.png" class="logo-img" alt="logo">
+            </div>
+            <div>
+                <a href="/">HOME</a>
+                <a href="/about">ABOUT</a>
+                <a href="/services">SERVICE</a>
+                <a href="/contact">CONTACT</a>
+                <% if (autanticated) { %>
+                    <img src="/svg/login.svg" class="login-svg" alt="login">
+                <% } %>
+            </div>
+        </nav>
+        <div class="container">
+           About
+        </div>
+       </section>
+</body>
+</html>

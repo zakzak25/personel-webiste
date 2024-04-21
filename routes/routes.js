@@ -8,8 +8,24 @@ const bcrypt = require('bcrypt');
 
 //main page
 routes.get('/' , (req , res) => {
-    res.render('index');
+    res.render('index',{title: 'Main page' ,autanticated : false});
 });
+
+//about page
+routes.get('/about' , (req , res) => {
+    res.status(200).render('about' ,{title : 'About' ,autanticated : false})
+});
+
+//service page
+routes.get('/services' , (req , res) => {
+    res.status(200).render('services' ,{title : 'About' ,autanticated : false})
+});
+
+//contact page route
+routes.get('/contact' , (req , res) => {
+    res.status(200).render('contact' , {title : 'Contact' , autanticated : false })
+})
+
 
 //registration page 
 routes.get('/registration' , (req , res) => {
