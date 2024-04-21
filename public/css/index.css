@@ -7,6 +7,7 @@
 
 
    :root {
+    --darkblue:#283033;
     --bacground:#CD7EE7;
     --white:#FBFBFB;
     --orange:#FFA500;
@@ -162,5 +163,76 @@
     font-size: 29px;
   }
   section div.service-container div.services-div {
+    position: relative;
+    padding:20px 20px 100px 0;
+    color: white;
+  }
 
+  section div.service-container div.services-div div.label-div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    background-color: var(--darkblue);
+    margin-bottom: 19px;
+    padding: 10px;
+  }
+
+  section div.service-container div.services-div div.label-div div.icon-div {
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 2%;
+    height: 100%;
+  }
+
+  section div.service-container div.services-div div.label-div div.icon-div i {
+    padding: 10px;
+  }
+  section div.service-container div.services-div div.label-div div.content-div {
+    padding-top: 10px;
+    width: 96%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  section div.service-container div.mail-div {
+    position: relative;
+    width: 100%;
+    background: var(--darkblue);
+    padding: 23px;
+  }
+
+  section div.service-container div.mail-div h2{
+    color: white;
+    font-size: 17px;
+  }
+
+  section div.service-container div.mail-div div.input-div {
+    padding: 10px 0;
+  }
+
+  section div.service-container div.mail-div input {
+    width: 90%;
+    height: 40px;
+    border-radius: 3px;
+    padding-left: 10px;
+  }
+
+  section div.service-container div.mail-div button {
+    width: 9%;
+    height: 40px;
+    color: black;
+    background: var(--orange);
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  section div.service-container div.mail-div button:hover {
+    color: gray;
   }

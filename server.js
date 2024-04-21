@@ -29,7 +29,3 @@ app.use(express.urlencoded({extended : false}));
 
 //main route
 app.use('/' , routes);
-
-
-
-
