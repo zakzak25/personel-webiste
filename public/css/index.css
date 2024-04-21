@@ -114,3 +114,53 @@
   .btn:hover {
     box-shadow: 1px 1px 0px 1px black;
   }
+
+  /* about css */
+  section div.about-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+    margin-top: 5%;
+  }
+
+  section div.about-container div {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+  }
+
+  section div.about-container div img {
+    width: 100%;
+    height: 100%;
+  }
+
+  section div.about-container div h2 {
+    font-size: 25px;
+    letter-spacing: 10px;
+    color: white;
+  }
+
+  section div.about-container div p {
+    font-size: 25px;
+    color: black;
+    margin-top: 129px;
+  }
+
+  /* services page */
+
+  section div.service-container {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    margin-top: 5%;
+  }
+
+  section div.service-container h2 {
+    font-size: 29px;
+  }
+  section div.service-container div.services-div {
+
+  }

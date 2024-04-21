@@ -37,8 +37,6 @@ routes.get('/login' , (req , res) => {
     res.render('login' , {title : 'Log in page',condition:false});
 });
 
-
-
 //send data from html page to the back end
 routes.post('/newUser' , async (req , res)=> {
     try {
